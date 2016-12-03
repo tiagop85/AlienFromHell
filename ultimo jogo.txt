@@ -1,5 +1,11 @@
-1a fase
-* tutorial: se libertando, dae vai andar um pouco pelo mapa, ensinar a movimentação / encontrar a arma dele / ensinar a atirar e mostrar perigo ao ser atingido ao tocar no robo. Ao final da fase, ela rackeia o sistema dos robos fzendo eles ficarem atordoados
+1a fase TUTORIAL ( THOMAS )
+Missão: Heroi se liberta, aprendendo a usar os comandos basicos do jogo:
+1. deve andar um pouco pra direita (seta direita)
+furtividade ate pegar a arma
+2. deve subir uma plataforma (pulo) para recuperar sua arma, que estara nessa plataforma.
+3. deve atirar em um robo (tiro) para prosseguir e sair da fase. 
+4. rackear os robos (atordoar)
+ndo, dae vai andar um pouco pelo mapa, ensinar a movimentação / encontrar a arma dele / ensinar a atirar e mostrar perigo ao ser atingido ao tocar no robo. Ao final da fase, ela rackeia o sistema dos robos fzendo eles ficarem atordoados
 
 2a fase: misssao: encontrar a chave da nave dele que estara no final do mapa (horizontal)
 
@@ -7,8 +13,12 @@
 
 
 1. parallax tema: cela (so vai ter um monstro alienigena no final)
-2. parallax laboratorio monstros = Robos
+2. parallax laboratorio dos monstros
 3. parallax tematica planeta alienigena = Robos
+
+1. Thomas:  obstaculo: andar: usar o pulo | mostrar um robo: testar o tiro | ensinar a se mover horizontal e vertical
+2. Dayvison
+3. Tiago		
 
 
 estilo:
@@ -19,22 +29,12 @@ mesmo modelo de tamanho pixel da aula de sabado
 
 
 condicoes de morte:
-robo: se auto destrui ao tocar no player
+robo: se auto destrui ao tocar no player | 3 explosoes = morre, recomeca do comeco do inicio.
 
-3 contatos = morre
+fazer arte: heroi (usar o megaman temporario)
+fazer arte: robot (usar bomba temporario)
 
-
-1. fase:  obstaculo: andar: usar o pulo | mostrar um robo: testar o tiro | ensinar a se mover horizontal e vertical
-2. dayvison
-3. tiago		
-
-
-fazer o robot (bomba temporario)
-fazer o heroi (usar o megaman temporario)
-
-
-
-vida espalhada pelo mapa:
-mapa espinho: ROBOT
+vida espalhada pelo mapa: NAO
+tiled: ao fazer o mapa onde por o <espinho> sera posteriormente um ROBOT
 
 
