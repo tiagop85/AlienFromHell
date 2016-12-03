@@ -1,0 +1,40 @@
+1a fase
+* tutorial: se libertando, dae vai andar um pouco pelo mapa, ensinar a movimentação / encontrar a arma dele / ensinar a atirar e mostrar perigo ao ser atingido ao tocar no robo. Ao final da fase, ela rackeia o sistema dos robos fzendo eles ficarem atordoados
+
+2a fase: misssao: encontrar a chave da nave dele que estara no final do mapa (horizontal)
+
+3a fase: apos recuperar a chave da nave dele, alarme soa, sequencia de auto destruicao do planeta / escape vertical
+
+
+1. parallax tema: cela (so vai ter um monstro alienigena no final)
+2. parallax laboratorio monstros = Robos
+3. parallax tematica planeta alienigena = Robos
+
+
+estilo:
+https://theindigamer.files.wordpress.com/2014/06/underground-mushroom-biome.png
+
+
+mesmo modelo de tamanho pixel da aula de sabado
+
+
+condicoes de morte:
+robo: se auto destrui ao tocar no player
+
+3 contatos = morre
+
+
+1. fase:  obstaculo: andar: usar o pulo | mostrar um robo: testar o tiro | ensinar a se mover horizontal e vertical
+2. dayvison
+3. tiago		
+
+
+fazer o robot (bomba temporario)
+fazer o heroi (usar o megaman temporario)
+
+
+
+vida espalhada pelo mapa:
+mapa espinho: ROBOT
+
+
