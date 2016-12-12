@@ -1,0 +1,869 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EVENTS</name>
+    <events>
+        <variable comment="0.08" constant="0" name="ACCELERATION" sid="242284742356089" static="0" type="number">0.08</variable>
+        <variable constant="0" name="TURRET_TIMESHOOT" sid="173829417376066" static="0" type="number">7</variable>
+        <variable constant="0" name="ROBOT_TIMESHOOT" sid="690827618192180" static="0" type="number">5</variable>
+        <variable constant="0" name="GAME_OVER" sid="921210402902280" static="0" type="number">0</variable>
+        <comment>* PLAYER BEHAVIOR</comment>
+        <event-block sid="258416787880587">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="992807443091487" type="player" />
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="514433490049098" type="player" />
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="398506050817616" type="player">
+                    <param id="0" name="Instance variable">FIRE</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="294996877870694" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="752651723488301" type="player">
+                    <param id="0" name="Animation">&quot;IDLE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="268671312135419">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="875663690079229" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="368104325736610" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="498511851623518" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="822481203482815">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="952186880305099" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="570545340021646" type="player">
+                            <param id="0" name="Animation">&quot;WALK&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="506084027117261">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="871238182311269" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="665597147097579" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="915474416196627" type="player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="809883766402918">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="285510201008313" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="286444387979206" type="player">
+                            <param id="0" name="Animation">&quot;WALK&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="992659886745764">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="155527433495299" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="815709776877833" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="638656745659137" type="player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="791730886330566">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="713183142011012" type="player" />
+                <condition id="-14" name="Compare variable" sid="681657349236049" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="319429808832250" type="player">
+                    <param id="0" name="Animation">&quot;JUMP&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="857206829357383">
+            <conditions>
+                <condition behavior="Platform" id="6" name="On fall" sid="881328900395214" type="player" />
+                <condition id="-14" name="Compare variable" sid="785497375924950" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="193228133752417" type="player">
+                    <param id="0" name="Animation">&quot;FALL&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="366682597847924">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="723443004492082" type="player" />
+                <condition id="-14" name="Compare variable" sid="310937126359438" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="798633604792716" type="player">
+                    <param id="0" name="Animation">&quot;IDLE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="995059777157126">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="327896868239965" type="Keyboard">
+                    <param id="0" name="Key">17 (Ctrl)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="603328785865454" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="140416622486457" type="player">
+                    <param id="0" name="Animation">&quot;FIRE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="575028149008574" type="player">
+                    <param id="0" name="Instance variable">FIRE</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="899097870185049" type="System">
+                    <param id="0" name="Seconds">0.25</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="678579600499651" type="player">
+                    <param id="0" name="Instance variable">FIRE</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="493506950490422" type="player">
+                    <param id="0" name="Object">player_shoot</param>
+                    <param id="1" name="Layer">3</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action behavior="Bullet" id="2" name="Set gravity" sid="472129808163877" type="player_shoot">
+                    <param id="0" name="Gravity">tmMap.Bullet.Speed</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="895216892294888">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="720954971656664" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="526972467614607" type="player_shoot">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="675121453502633" type="player_shoot">
+                            <param id="0" name="Angle">-180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>* BULLET GRAVITY</comment>
+        <event-block sid="875383073921157">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="765327688786047" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="943205413131322" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="368692059029899" type="player_shoot">
+                    <param id="0" name="Y">self.INI_Y+(tmMap.Y-Self.MAP_Y)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="993057970074855" type="enemy_shoot_left">
+                    <param id="0" name="Y">self.INI_Y+(tmMap.Y-Self.MAP_Y)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="257200710204432" type="enemy_shoot_right">
+                    <param id="0" name="Y">self.INI_Y+(tmMap.Y-Self.MAP_Y)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="524777014715641">
+            <conditions>
+                <condition id="-18" name="On created" sid="820283515717625" type="player_shoot" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="208790879656821" type="player_shoot">
+                    <param id="0" name="Instance variable">INI_Y</param>
+                    <param id="1" name="Value">self.Y</param>
+                </action>
+                <action id="-10" name="Set value" sid="149467808452895" type="player_shoot">
+                    <param id="0" name="Instance variable">MAP_Y</param>
+                    <param id="1" name="Value">tmMap.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="623095035784406">
+            <conditions>
+                <condition id="-18" name="On created" sid="608510573691958" type="enemy_shoot_left" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="519510014856483" type="enemy_shoot_left">
+                    <param id="0" name="Instance variable">INI_Y</param>
+                    <param id="1" name="Value">self.Y</param>
+                </action>
+                <action id="-10" name="Set value" sid="328160164554897" type="enemy_shoot_left">
+                    <param id="0" name="Instance variable">MAP_Y</param>
+                    <param id="1" name="Value">tmMap.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="761330950269883">
+            <conditions>
+                <condition id="-18" name="On created" sid="474767763322453" type="enemy_shoot_right" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="203664224770352" type="enemy_shoot_right">
+                    <param id="0" name="Instance variable">INI_Y</param>
+                    <param id="1" name="Value">self.Y</param>
+                </action>
+                <action id="-10" name="Set value" sid="160782909658706" type="enemy_shoot_right">
+                    <param id="0" name="Instance variable">MAP_Y</param>
+                    <param id="1" name="Value">tmMap.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>* ENEMY SHOOT</comment>
+        <event-block sid="707537609326182">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="997353751167604" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="993462404967583" type="enemy_robot">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="765814983385513" type="enemy_turret">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>* ENEMY BEHAVIOR</comment>
+        <event-block sid="311612032354042">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="720784832660055" type="enemy_robot">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;left&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="271179649918040" type="enemy_robot">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="554444326019428" type="enemy_robot">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="972859764146690">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="769788764479855" type="enemy_robot">
+                            <param id="0" name="Side">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="281882029307855" type="enemy_robot">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">&quot;right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="129596599278752">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="613478799544988" type="enemy_robot">
+                    <param id="0" name="Instance variable">direction</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;right&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="434702275187351" type="enemy_robot">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="679018293232358" type="enemy_robot">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="890087232675881">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="727631917512072" type="enemy_robot">
+                            <param id="0" name="Side">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="927856808651340" type="enemy_robot">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Value">&quot;left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="756860152926310">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="243940212313772" type="enemy_turret">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="971893898525630" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="848163490330846" type="enemy_turret">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">TURRET_TIMESHOOT</param>
+                </action>
+                <action id="4" name="Set animation" sid="317496322190428" type="enemy_turret">
+                    <param id="0" name="Animation">&quot;FIRE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="583495166960987" type="System">
+                    <param id="0" name="Seconds">0.25</param>
+                </action>
+                <action id="4" name="Set animation" sid="147191886277346" type="enemy_turret">
+                    <param id="0" name="Animation">&quot;IDLE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="370872925785966">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="781727183278394" type="enemy_turret">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="2" name="Set gravity" sid="844439281230181" type="enemy_shoot_left">
+                            <param id="0" name="Gravity">tmMap.Bullet.Speed</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="388633128103901" type="enemy_turret">
+                            <param id="0" name="Object">enemy_shoot_left</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="679326959035855">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="367123711507449" type="enemy_turret">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="2" name="Set gravity" sid="304081763762307" type="enemy_shoot_right">
+                            <param id="0" name="Gravity">tmMap.Bullet.Speed</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="766062524841775" type="enemy_turret">
+                            <param id="0" name="Object">enemy_shoot_right</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="306790090840131">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="132853136028852" type="enemy_robot">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="662693367610986" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="555753942432769" type="enemy_robot">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">ROBOT_TIMESHOOT</param>
+                </action>
+                <action id="4" name="Set animation" sid="421550377041044" type="enemy_robot">
+                    <param id="0" name="Animation">&quot;FIRE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="436849036688844" type="System">
+                    <param id="0" name="Seconds">0.25</param>
+                </action>
+                <action id="4" name="Set animation" sid="695872927708654" type="enemy_robot">
+                    <param id="0" name="Animation">&quot;IDLE&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="131759172251394">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="430366574019005" type="enemy_robot">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;left&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="2" name="Set gravity" sid="486665686009424" type="enemy_shoot_left">
+                            <param id="0" name="Gravity">tmMap.Bullet.Speed</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="543943931793463" type="enemy_robot">
+                            <param id="0" name="Object">enemy_shoot_left</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="133635360806443">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="906687134798214" type="enemy_robot">
+                            <param id="0" name="Instance variable">direction</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="2" name="Set gravity" sid="287179866801220" type="enemy_shoot_right">
+                            <param id="0" name="Gravity">tmMap.Bullet.Speed</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="178350747997506" type="enemy_robot">
+                            <param id="0" name="Object">enemy_shoot_right</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>* GAME OVER</comment>
+        <event-block any="1" sid="466146169574096">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="557001251716004" type="player">
+                    <param id="0" name="Object">enemy_robot</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="439045888325350" type="player">
+                    <param id="0" name="Object">enemy_turret</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="723268682225530" type="player">
+                    <param id="0" name="Object">lava_floor</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="278795400970921" type="enemy_shoot_left">
+                    <param id="0" name="Object">player</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="980121142742741" type="enemy_shoot_right">
+                    <param id="0" name="Object">player</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="473726095964402">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="660623769400404" type="System">
+                            <param id="0" name="Variable">GAME_OVER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="380892959541575" type="System">
+                            <param id="0" name="Variable">GAME_OVER</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="462124737631214">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="246998210228427" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="400065140440861" type="System">
+                    <param id="0" name="Variable">GAME_OVER</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+                <action id="4" name="Set animation" sid="685119122869023" type="player">
+                    <param id="0" name="Animation">&quot;DEAD&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="292273265918264" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="348805234591458" type="tmBackground">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="196564666531969" type="tmMap">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="406504224109954" type="enemy_robot">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="2" name="Stop" sid="810017206436126" type="enemy_robot" />
+                <action behavior="Bullet" id="5" name="Set enabled" sid="641676381686506" type="flames">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="284449989313312" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="944932231535584" type="System" />
+                <action id="-21" name="Reset global variables" sid="883954581477434" type="System" />
+            </actions>
+        </event-block>
+        <comment>* WIN</comment>
+        <event-block sid="789621041921834">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="557806161852954" type="player">
+                    <param id="0" name="Object">spaceship</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="412934805834621" type="tmBackground">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="679542634986280" type="tmMap">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Solid" id="0" name="Set enabled" sid="947191953281122" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="440584971951576" type="player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="983611870797196" type="player" />
+                <action id="-16" name="Wait" sid="705043201231130" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="848706122430431" type="spaceship">
+                    <param id="0" name="Animation">&quot;ON&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="760657757570080" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="714069915499638" type="spaceship">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="805005174016432" type="spaceship">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="240019597111565" type="spaceship">
+                    <param id="0" name="Angle">270</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="310948233566963">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="491997961638034" type="spaceship">
+                    <param id="0" name="Object">lava_floor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="909295526253989" type="tmBackground">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="742309963749168" type="tmMap">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>* ENEMY DOWN</comment>
+        <event-block sid="959605521085506">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="887471766919507" type="player_shoot">
+                    <param id="0" name="Object">enemy_robot</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="521900855176576" type="enemy_robot" />
+                <action id="-9" name="Destroy" sid="122364093220798" type="player_shoot" />
+            </actions>
+        </event-block>
+        <event-block sid="101338087625909">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="935389318749562" type="player_shoot">
+                    <param id="0" name="Object">enemy_turret</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="346367137798324" type="enemy_turret" />
+                <action id="-9" name="Destroy" sid="296018392169494" type="player_shoot" />
+            </actions>
+        </event-block>
+        <event-block sid="335761018889018">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="467840927178628" type="enemy_robot">
+                    <param id="0" name="Object">lava_floor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="594131646176694" type="enemy_robot" />
+            </actions>
+        </event-block>
+        <event-block sid="678425545025125">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="993399842749644" type="enemy_turret">
+                    <param id="0" name="Object">lava_floor</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="985512805572519" type="enemy_turret" />
+            </actions>
+        </event-block>
+        <event-block sid="918871977407488">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="534437984166655" type="player_shoot">
+                    <param id="0" name="Object">enemy_shoot_right</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="580971539086999" type="enemy_shoot_right" />
+                <action id="-9" name="Destroy" sid="559117335282656" type="player_shoot" />
+            </actions>
+        </event-block>
+        <event-block sid="904238420486503">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="944858389571103" type="player_shoot">
+                    <param id="0" name="Object">enemy_shoot_left</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="267461543922699" type="enemy_shoot_left" />
+                <action id="-9" name="Destroy" sid="303050330046437" type="player_shoot" />
+            </actions>
+        </event-block>
+        <event-block sid="149038459337994">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="135612584029866" type="enemy_shoot_right">
+                    <param id="0" name="Object">limit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="540110367590870" type="enemy_shoot_right" />
+            </actions>
+        </event-block>
+        <event-block sid="990616054838113">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="614573769101517" type="enemy_shoot_left">
+                    <param id="0" name="Object">limit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="411313346930272" type="enemy_shoot_left" />
+            </actions>
+        </event-block>
+        <event-block sid="318550666824413">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="190740415913157" type="player_shoot">
+                    <param id="0" name="Object">limit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="742936261530531" type="enemy_shoot_right" />
+            </actions>
+        </event-block>
+        <comment>* START OF LAYOUT</comment>
+        <event-block any="1" sid="322184100513714">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="665205939537662" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="246891031970223" type="tmMap">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="874554749678896" type="tmBackground">
+                    <param id="0" name="Angle">tmMap.Bullet.AngleOfMotion</param>
+                </action>
+                <action id="-10" name="Set value" sid="702529441337963" type="enemy_robot">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">ROBOT_TIMESHOOT</param>
+                </action>
+                <action id="-10" name="Set value" sid="276960696843403" type="enemy_turret">
+                    <param id="0" name="Instance variable">time_to_shoot</param>
+                    <param id="1" name="Value">TURRET_TIMESHOOT</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="114712797643318">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="821637049461410" type="enemy_turret">
+                    <param id="0" name="Instance variable">DIREITA</param>
+                </condition>
+                <condition id="7" inverted="1" name="Is mirrored" sid="157868578283082" type="enemy_turret" />
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="564346859388497" type="enemy_turret">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>* PLANET AUTO DESTRUCT</comment>
+        <event-block sid="449261988135319">
+            <conditions>
+                <condition behavior="Bullet" id="0" name="Compare speed" sid="968831380311198" type="tmMap">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">50</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="890909860083091" type="tmMap">
+                    <param id="0" name="Instance variable">SPEED_OK</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="256337260747513" type="tmMap">
+                    <param id="0" name="Instance variable">SPEED_OK</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="521012543138420" type="tmMap">
+                    <param id="0" name="Speed">50</param>
+                </action>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="269493652192205" type="tmMap">
+                    <param id="0" name="Acceleration">0</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="872905817210714" type="tmBackground">
+                    <param id="0" name="Speed">tmMap.Bullet.Speed</param>
+                </action>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="781050488889771" type="tmBackground">
+                    <param id="0" name="Acceleration">tmMap.Bullet.Acceleration</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="690946100148711">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="270218064844359" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="702008663450336" type="tmMap">
+                    <param id="0" name="Instance variable">SPEED_OK</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="630133073458767" type="tmMap">
+                    <param id="0" name="Acceleration">Self.Bullet.Acceleration+ACCELERATION</param>
+                </action>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="981516741118815" type="tmBackground">
+                    <param id="0" name="Acceleration">tmMap.Bullet.Acceleration</param>
+                </action>
+                <action behavior="Bullet" id="1" name="Set acceleration" sid="422551947904793" type="flames">
+                    <param id="0" name="Acceleration">Self.Bullet.Acceleration + ACCELERATION</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="683956568242635">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="377527449176847" type="flames">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-400</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="586216260533343" type="flames">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="888984291301074">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="633453710692673" type="flames">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="803619442456541" type="flames">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967932416633309">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="770085865899074" type="player">
+                    <param id="0" name="Object">FASE_01_END</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="210598909826624" type="System">
+                    <param id="0" name="Layout">&quot;FASE_02&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="268244778794729">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="388227876346141" type="player">
+                    <param id="0" name="Object">FASE_02_END</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-25" name="Go to layout (by name)" sid="339761821144042" type="System">
+                    <param id="0" name="Layout">&quot;FASE_03&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
