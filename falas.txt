@@ -1,0 +1,58 @@
+Intro:
+                      The Survivor
+Pressione qualquer tecla para jogar...
+
+Durante a missão de reconhecimento 
+ao recém descoberto Planeta z237...
+tudo ia bem... até que... repentinamente 
+houve perda de comunicação 
+com o robo de exploração R17...
+
+
+Fase 1:
+R17: Sistemas funcionando novamente!
+Mas... o que aconteceu?
+Ohh! Meus pertences foram roubados!! :(
+Preciso encontrar minhas
+botas anti gravitacionais... 
+mas onde será que elas estão?
+Pressione qualquer tecla para continuar...
+
+R17: Que bom! Encontrei minhas botas.
+Agora posso pular normalmente 
+apertando a tecla < ESPAÇO > ou < Q >.
+Estou detectando inimigos próximos...
+agora preciso encontrar 
+minha arma para derrotá-los!
+
+R17: Finalmente... 
+agora posso destruir inimigos 
+apertando a tecla < CTRL > ou < W >.
+Tenho que sair desse laboratório 
+antes que apareçam mais inimigos...
+
+
+Fase 2:
+R17: Ok! instruções recebidas.
+Etnão a chave da minha nave 
+está no final deste corredor...
+Tenho que tomar bastante cuidado
+para recuperá-la... e sobreviver até lá!
+
+R17: Ufa.. chave recuperada!
+Agora eu já pos...ohhh nããoooo!
+Alguém ativou a sequência de
+auto-destruição do Planeta z237!!!
+Preciso sair para a área externa
+antes que seja tarde demais!
+
+
+Fase 3:
+R17: Minha nave está aqui no topo...
+Preciso chegar lá antes
+que a lava me alcance e
+eu vire material de reciclagem!
+
+R17: Missão ao Planeta Z237 concluída!
+Robô R17 retornando à base de operações.
+Obrigado!
